@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "JobCrawl Viewer",
+  "version": "1.0.0",
+  "description": "Intercepts JobCrawl API responses and displays them in a clean, browsable format.",
+  "host_permissions": ["*://jobcrawl.org/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://jobcrawl.org/*"],
+      "js": ["content.js"],
+      "css": ["panel.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["*://jobcrawl.org/*"]
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
