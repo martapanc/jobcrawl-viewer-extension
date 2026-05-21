@@ -26,14 +26,21 @@ function renderPanel(data) {
   document.documentElement.style.marginRight = `${PANEL_WIDTH}px`;
   document.documentElement.style.transition = "margin-right 0.25s ease";
 
+  const SOURCE_META = {
+    remotive: { label: "🌍 Remotive Viewer" },
+    jobcrawl: { label: "⚡ JobCrawl Viewer" },
+  };
+  const { label } = SOURCE_META[data.source] || SOURCE_META.jobcrawl;
+
   const panel = document.createElement("div");
   panel.id = "jcv-panel";
+  panel.dataset.source = data.source || "jobcrawl";
 
   const header = document.createElement("div");
   header.className = "jcv-header";
   header.innerHTML = `
     <div class="jcv-header-top">
-      <span class="jcv-logo">⚡ JobCrawl Viewer</span>
+      <span class="jcv-logo">${label}</span>
       <button id="jcv-close" title="Close panel">✕</button>
     </div>
     <span class="jcv-count">${data.jobs.length} of ${data.totalCount} jobs – p.${data.currentPage}/${data.totalPages}</span>

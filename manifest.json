@@ -3,10 +3,10 @@
   "name": "JobCrawl Viewer",
   "version": "1.0.0",
   "description": "Intercepts JobCrawl API responses and displays them in a clean, browsable format.",
-  "host_permissions": ["*://jobcrawl.org/*"],
+  "host_permissions": ["*://jobcrawl.org/*", "*://remotive.com/*"],
   "content_scripts": [
     {
-      "matches": ["*://jobcrawl.org/*"],
+      "matches": ["*://jobcrawl.org/*", "*://remotive.com/*"],
       "js": ["content.js"],
       "css": ["panel.css"],
       "run_at": "document_start"
@@ -15,7 +15,7 @@
   "web_accessible_resources": [
     {
       "resources": ["injected.js"],
-      "matches": ["*://jobcrawl.org/*"]
+      "matches": ["*://jobcrawl.org/*", "*://remotive.com/*"]
     }
   ],
   "icons": {

@@ -152,6 +152,21 @@
   gap: 4px;
 }
 
+/* ── Remotive theme overrides ── */
+#jcv-panel[data-source="remotive"] .jcv-logo {
+  color: #60b4f0;
+}
+
+#jcv-panel[data-source="remotive"] .jcv-card:hover .jcv-title {
+  color: #60b4f0;
+}
+
+#jcv-panel[data-source="remotive"] .jcv-tag-remote {
+  background: #0f1e2e;
+  color: #60b4f0;
+  border-color: #1a3148;
+}
+
 /* ── Tags ── */
 .jcv-tag {
   font-size: 10px;
